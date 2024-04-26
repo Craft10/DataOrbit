@@ -1,0 +1,39 @@
+run = "tsx index.ts"
+entrypoint = "index.ts"
+hidden = [".config", "package-lock.json", "tsconfig.json"]
+modules = ["nodejs-20:v8-20230920-bd784b9"]
+
+[nix]
+channel = "stable-23_11"
+
+[gitHubImport]
+requiredFiles = [".replit", "replit.nix", ".config"]
+
+[deployment]
+run = ["tsx", "index.ts"]
+deploymentTarget = "cloudrun"
+ignorePorts = false
+
+[[ports]]
+localPort = 3000
+externalPort = 80
+
+[[ports]]
+localPort = 33133
+externalPort = 3001
+
+[[ports]]
+localPort = 33241
+externalPort = 3002
+
+[[ports]]
+localPort = 36711
+externalPort = 3000
+
+[[ports]]
+localPort = 42333
+externalPort = 3003
+
+[[ports]]
+localPort = 43301
+externalPort = 4200
